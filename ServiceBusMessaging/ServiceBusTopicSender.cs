@@ -29,7 +29,7 @@ namespace ServiceBusMessaging
             string messagePayload = JsonSerializer.Serialize(payload);
             ServiceBusMessage message = new ServiceBusMessage(messagePayload);
 
-            message.ApplicationProperties.Add("goals", payload.Goals);
+            message.ApplicationProperties.Add("goals", payload.documentoID);
 
             try
             {

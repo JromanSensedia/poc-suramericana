@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetCoreServiceBusApi2.Model
+namespace ServiceBusReceiverApi.Model
 {
     public class PayloadContext : DbContext
     {
@@ -10,11 +10,11 @@ namespace AspNetCoreServiceBusApi2.Model
 
         public DbSet<Payload> Payloads { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            builder.Entity<Payload>().Property(n => n.Id).ValueGeneratedOnAdd();
-            builder.Entity<Payload>().HasKey(m => m.Id);
-            base.OnModelCreating(builder);
+            modelBuilder.Entity<Payload>().Property(n => n.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Payload>().HasKey(m => m.Id);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

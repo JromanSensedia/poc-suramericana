@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreServiceBusApi1", "AspNetCoreServiceBusApi1\AspNetCoreServiceBusApi1.csproj", "{31BEA862-3D37-4514-94F4-59A0A5E1E0B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusSenderApi", "AspNetCoreServiceBusApi1\ServiceBusSenderApi.csproj", "{31BEA862-3D37-4514-94F4-59A0A5E1E0B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusMessaging", "ServiceBusMessaging\ServiceBusMessaging.csproj", "{DE933DE9-731B-4EAD-88A4-62533595A278}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreServiceBusApi2", "AspNetCoreServiceBusApi2\AspNetCoreServiceBusApi2.csproj", "{B0948B3C-3F48-43B1-BB34-56FEF97466EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusReceiverApi", "AspNetCoreServiceBusApi2\ServiceBusReceiverApi.csproj", "{B0948B3C-3F48-43B1-BB34-56FEF97466EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{525106AB-674D-4640-8682-FFE0F8DFD7ED}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionService3", "FunctionService3\FunctionService3.csproj", "{4EB8307C-1753-4076-A0E0-C82E5358FEFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBus.Infraestructure", "ServiceBus.Infraestructure\ServiceBus.Infraestructure.csproj", "{4816C01F-D978-4704-9E67-F3FDE1BB1DF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReducedAccessRightsQueueSender", "ReducedAccessRightsQueueSender\ReducedAccessRightsQueueSender.csproj", "{874A1F70-2787-4CAD-872A-27A98B8FB1CE}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{831E66D0-8F6B-44A9-9FDA-3926BD499413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{B0948B3C-3F48-43B1-BB34-56FEF97466EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0948B3C-3F48-43B1-BB34-56FEF97466EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0948B3C-3F48-43B1-BB34-56FEF97466EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EB8307C-1753-4076-A0E0-C82E5358FEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EB8307C-1753-4076-A0E0-C82E5358FEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EB8307C-1753-4076-A0E0-C82E5358FEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EB8307C-1753-4076-A0E0-C82E5358FEFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{874A1F70-2787-4CAD-872A-27A98B8FB1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{874A1F70-2787-4CAD-872A-27A98B8FB1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{874A1F70-2787-4CAD-872A-27A98B8FB1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{874A1F70-2787-4CAD-872A-27A98B8FB1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4816C01F-D978-4704-9E67-F3FDE1BB1DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4816C01F-D978-4704-9E67-F3FDE1BB1DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4816C01F-D978-4704-9E67-F3FDE1BB1DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4816C01F-D978-4704-9E67-F3FDE1BB1DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831E66D0-8F6B-44A9-9FDA-3926BD499413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831E66D0-8F6B-44A9-9FDA-3926BD499413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831E66D0-8F6B-44A9-9FDA-3926BD499413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831E66D0-8F6B-44A9-9FDA-3926BD499413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

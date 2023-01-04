@@ -17,7 +17,7 @@ namespace ServiceBusMessaging
         private readonly IProcessData _processData;
         private readonly IConfiguration _configuration;
         private readonly ServiceBusClient _client;
-        private const string QUEUE_NAME = "simplequeue";
+        private string QUEUE_NAME = "simplequeue";
         private readonly ILogger _logger;
         private ServiceBusProcessor _processor;
 
@@ -28,6 +28,7 @@ namespace ServiceBusMessaging
             _processData = processData;
             _configuration = configuration;
             _logger = logger;
+            QUEUE_NAME = configuration["QuebeName"] ?? configuration["QuebeName"].ToString();
 
             var connectionString = _configuration.GetConnectionString("ServiceBusConnectionString");
             _client = new ServiceBusClient(connectionString);
@@ -42,7 +43,7 @@ namespace ServiceBusMessaging
             };
 
             _processor = _client.CreateProcessor(QUEUE_NAME, _serviceBusProcessorOptions);
-            _processor.ProcessMessageAsync += ProcessMessagesAsync;
+            _processor.ProcessMessageAsync+= ProcessMessagesAsync;            
             _processor.ProcessErrorAsync += ProcessErrorAsync;
             await _processor.StartProcessingAsync().ConfigureAwait(false);
         }

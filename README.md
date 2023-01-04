@@ -1,64 +1,64 @@
-[![.NET](https://github.com/damienbod/AspNetCoreServiceBus/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/AspNetCoreServiceBus/actions/workflows/dotnet.yml)
+# Files and folders extraction sample
 
-# ASP.NET Core Azure Sevice Bus
+![Platforms](https://img.shields.io/badge/platform-Windows|MacOS-lightgray.svg)
+![.NET](https://img.shields.io/badge/.NET%20Core-3.1-blue.svg)
+[![License](http://img.shields.io/:license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
+[![oAuth2](https://img.shields.io/badge/oAuth2-v1-green.svg)](http://sensedia.com/)
 
-<ul>
-	<li><a href="https://damienbod.com/2019/04/23/using-azure-service-bus-queues-with-asp-net-core-services/">Using Azure Service Bus Queues with ASP.NET Core Services</a></li>
-	<li><a href="https://damienbod.com/2019/04/24/using-azure-service-bus-topics-in-asp-net-core/">Using Azure Service Bus Topics in ASP.NET Core</a></li>
-	<li><a href="https://damienbod.com/2019/04/27/using-azure-service-bus-topics-subscription-filters-in-asp-net-core/">Using Azure Service Bus Topics Subscription Filters in ASP.NET Core</a></li>
-	<li><a href="https://damienbod.com/2019/04/30/using-ef-core-to-process-azure-service-messages-in-asp-net-core/">Using Entity Framework Core to process Azure Service Messages in ASP.NET Core</a></li>
-	<li><a href="https://damienbod.com/2019/05/03/using-an-azure-service-bus-topic-subscription-in-an-azure-function/">Using an Azure Service Bus Topic Subscription in an Azure Function</a></li>
-	<li><a href="https://damienbod.com/2020/03/06/using-azure-service-bus-with-restricted-access/">Using Azure Service Bus with restricted access</a></li>
-	<li><a href="https://damienbod.com/2021/07/20/using-an-asp-net-core-ihostedservice-to-run-azure-service-bus-subscriptions-and-consumers/">Using an ASP.NET Core IHostedService to run Azure Service Bus subscriptions and consumers</a></li>
-</ul>
+ASP.NET Core
+============
 
-user secrets
-```
-{
-  "ConnectionStrings": {
-    "ServiceBusConnectionString": "--your-servicebus-connection--string--"
-  }
-}
-```
-## History
+ASP.NET Core is an open-source and cross-platform framework for building modern cloud based internet connected applications, such as web apps, IoT apps and mobile backends. ASP.NET Core apps run on [.NET Core](https://dot.net), a free, cross-platform and open-source application runtime. It was architected to provide an optimized development framework for apps that are deployed to the cloud or run on-premises. It consists of modular components with minimal overhead, so you retain flexibility while constructing your solutions. You can develop and run your ASP.NET Core apps cross-platform on Windows, Mac and Linux. [Learn more about ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
 
-2021-11-08 Updated .NET 6
+## Get Started
 
-2021-07-20 Added IHostedService to consumer the message in the ASP.NET Core app
+Follow the [Getting Started](https://docs.microsoft.com/aspnet/core/getting-started) instructions in the [ASP.NET Core docs](https://docs.microsoft.com/aspnet/index).
 
-2021-05-19 Updated to .NET 5, migrated to Azure.Messaging.ServiceBus, switched Json serializer
+Also check out the [.NET Homepage](https://www.microsoft.com/net) for released versions of .NET, getting started guides, and learning resources.
 
-2020-03-06 Added restricted access example
+See the [Triage Process](https://github.com/dotnet/aspnetcore/blob/main/docs/TriageProcess.md) document for more information on how we handle incoming issues.
 
-2019-12-08 Updated to .NET Core 3.1
+# Setup
 
-## Links
+## Prerequisites
 
-https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus
+1. **Sensedia Account**: Learn how to create a Sensedia Account, activate subscription and create an app at Sensedia. 
+2. **Visual Studio**: Either Community 2017+ (Windows) or Code (Windows, MacOS).
+3. **.NET Core** basic knowledge with C# (Install Net core 3.1).
 
-https://docs.microsoft.com/en-us/azure/service-bus-messaging/
+## How to Engage, Contribute, and Give Feedback
 
-https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues
+Some of the best ways to contribute are to try things out, file issues, join in design conversations,
+and make pull-requests.
 
-https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications
+* [Download our latest daily builds](./docs/DailyBuilds.md)
+* Follow along with the development of ASP.NET Core:
+    * [Community Standup](https://live.asp.net): The community standup is held every week and streamed live to YouTube. You can view past standups in the linked playlist.
+    * [Roadmap](https://github.com/dotnet/aspnetcore/issues/27883): The schedule and milestone themes for ASP.NET Core.
+* [Build ASP.NET Core source code](./docs/BuildFromSource.md)
+* Check out the [contributing](CONTRIBUTING.md) page to see the best places to log issues and start discussions.
 
-https://www.nuget.org/packages/Microsoft.Azure.ServiceBus
+## Reporting security issues and bugs
 
-https://www.planetgeek.ch/2019/01/07/azure-service-bus-topologies/
+Security issues and bugs should be reported privately, via email, to the Microsoft Security Response Center (MSRC)  *******@sensedia.com. You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Further information, including the MSRC PGP key, can be found in the [Security TechCenter](https://technet.microsoft.com/en-us/security/ff852094.aspx).
 
-https://connectedcircuits.blog/2019/04/24/always-subscribe-to-dead-lettered-messages-in-an-azure-service-bus/
+## Related projects
 
-https://www.tomfaltesek.com/azure-functions-local-settings-json-and-source-control/
+These are some other repos for related projects:
 
-https://www.ben-morris.com/optimizing-performance-of-the-azure-service-bus-net-standard-sdk/
+* [Documentation](https://github.com/aspnet/Docs) - documentation sources for https://docs.microsoft.com/aspnet/core/
+* [Entity Framework Core](https://github.com/dotnet/efcore) - data access technology
+* [Runtime](https://github.com/dotnet/runtime) - cross-platform runtime for cloud, mobile, desktop, and IoT apps.
 
-https://ml-software.ch/posts/stripe-api-with-asp-net-core-part-3
+## Code of conduct
 
-https://www.serverless360.com/blog/auto-forwarding-a-hidden-gem-of-service-bus
+See [CODE-OF-CONDUCT](./CODE-OF-CONDUCT.md)
 
-https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-tutorial-topics-subscriptions-cli
+## License
 
-https://github.com/paolosalvatori/ServiceBusExplorer/
+This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for full details.
 
-https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+## Written by
+
+Sensedia, [Sensedia Partner Development](http://www.sensedia.com)

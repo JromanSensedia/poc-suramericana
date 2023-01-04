@@ -4,7 +4,7 @@ using Serilog;
 using Serilog.Events;
 using System;
 
-namespace AspNetCoreServiceBusApi2
+namespace ServiceBusReceiverApi
 {
     public class Program
     {

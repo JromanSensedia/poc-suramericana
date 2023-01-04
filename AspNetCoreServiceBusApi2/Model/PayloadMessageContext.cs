@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
-namespace AspNetCoreServiceBusApi2.Model
+namespace ServiceBusReceiverApi.Model
 {
     public class PayloadMessageContext : DbContext
     {
-        private string _connectionString;
+        private readonly string _connectionString;
 
         public DbSet<Payload> Payloads { get; set; }
 
@@ -15,14 +16,14 @@ namespace AspNetCoreServiceBusApi2.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(_connectionString);
+            optionsBuilder.UseMySql(_connectionString, ServerVersion.AutoDetect(_connectionString));
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            builder.Entity<Payload>().Property(n => n.Id).ValueGeneratedOnAdd();
-            builder.Entity<Payload>().HasKey(m => m.Id);
-            base.OnModelCreating(builder);
+            modelBuilder.Entity<Payload>().Property(n => n.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Payload>().HasKey(m => m.Id);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

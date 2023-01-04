@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace AspNetCoreServiceBusApi1
+namespace ServiceBusSenderApi
 {
     public class Program
     {

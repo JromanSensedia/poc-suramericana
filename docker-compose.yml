@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  servicebusreceiverapi:
+    image: ${DOCKER_REGISTRY-}servicebusreceiverapi
+    build:
+      context: .
+      dockerfile: AspNetCoreServiceBusApi2/Dockerfile
+
+  servicebussenderapi:
+    image: ${DOCKER_REGISTRY-}servicebussenderapi
+    build:
+      context: .
+      dockerfile: AspNetCoreServiceBusApi1/Dockerfile
+
