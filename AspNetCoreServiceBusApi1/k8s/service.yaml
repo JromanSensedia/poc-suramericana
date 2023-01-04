@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: api-sender-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  #externalTrafficPolicy: Local
+  selector:
+    app: api-sender
+  ports:
+    - protocol: TCP
+      port: 8020
+      targetPort: 80
+      name: http
+    # - protocol: TCP
+    #   port: 443
+    #   targetPort: 443
+    #   name: https

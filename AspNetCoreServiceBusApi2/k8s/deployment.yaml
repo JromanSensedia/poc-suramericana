@@ -1,0 +1,76 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-receiver-deployment
+  namespace: default
+  labels:
+    app: api-sender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-receiver
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: api-receiver
+    spec:
+      containers:
+        - name: api-receiver-container
+          image: servicebussenderapi:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80
+            - name: ConnectionStrings__AzureStorageAccount
+              value: "DefaultEndpointsProtocol=https;AccountName=suramericanastorage;AccountKey=XISCS+7JfplIxZPnoGcIeFu/To7BG/0zoM1roRLtR1/sNsQ+yGWzqp4FfMSGDWl/qESYjXrbumS3+AStSlBYQQ==;EndpointSuffix=core.windows.net"
+          livenessProbe:
+            httpGet:
+              path: /qhealth
+              port: 80
+              scheme: HTTP
+              # httpHeaders:
+              #   - name: Custom-Header
+              #     value: Awesome
+            initialDelaySeconds: 120
+            periodSeconds: 5
+            timeoutSeconds: 8
+            failureThreshold: 10
+          readinessProbe:
+            httpGet:
+              path: /qhealth
+              port: 80
+              scheme: HTTP
+            successThreshold: 3
+            initialDelaySeconds: 120
+            periodSeconds: 5
+            timeoutSeconds: 8
+            failureThreshold: 10
+---
+# apiVersion: policy/v1
+# kind: PodDisruptionBudget
+# metadata:
+#   namespace: hw
+#   name: zk-pdb
+# spec:
+#   maxUnavailable: 1
+#   #minAvailable: 2
+#   selector:
+#     matchLabels:
+#       app: api-hello
