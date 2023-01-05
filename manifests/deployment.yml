@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jromansensediapocsuramericana 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jromansensediapocsuramericana
+  template:
+    metadata:
+      labels:
+        app: jromansensediapocsuramericana 
+    spec:
+      containers:
+        - name: jromansensediapocsuramericana 
+          image: pocsuramericana1acr.azurecr.io/jromansensediapocsuramericana
+          ports:
+          - containerPort: 80
